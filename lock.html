@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="icon" href="https://www.freeiconspng.com/thumbs/travel-icon-png/plane-travel-flight-tourism-travel-icon-png-10.png">
+    <title>Quick Fix Hostel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+                       background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(243, 235, 229, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar .menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .menu ul li {
+            margin: 0 15px;
+        }
+
+        .navbar .menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .menu ul li a:hover {
+            color: #ff9800;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 70vh;
+        }
+
+        .main-content h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-content .custom-button {
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-content .custom-button:hover {
+            background-color: #e68a00;
+        }
+
+        .about-section {
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-section h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .login-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: #9d91c4;
+        }
+
+        .login-section .login-box {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .login-section .login-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .login-section .login-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #333;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-section .login-box a:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .footer .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ff9800;
+        }
+
+        @media (max-width: 768px) {
+            .login-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .login-section .login-box {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .main-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsp9FUVMjDBoUb0og42lOx0aPuTwaTrVZ8Ng&s" alt="Quick Fix Hostel">
+            <span>Quick Fix Hostel</span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="lock.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="about-section" id="about">
+        <h2>Welcome to Quick Fix Hostel</h2>
+        <p>Specially made for the hostel students to have quick and fast problem recovery.</p>
+    </div>
+    <div class="login-section">
+        <div class="login-box">
+            <h3>Student Login</h3>
+            <a href="studentlogin.html">Login</a>
+        </div>
+        <div class="login-box">
+            <h3>Admin Login</h3>
+            <a href="adminlogin.html">Login</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Follow Us</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_element');
+        }
+    </script>
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+
+            var searchQuery = document.getElementById("searchInput").value;
+
+            // Perform any additional filtering or processing based on the search query
+
+            // Submit the form, triggering the redirect to the search results page
+            this.submit();
+        });
+    </script>
+</body>
+</html>

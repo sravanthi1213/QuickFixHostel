@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Fix Hostel - Complaint Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar .menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .menu ul li {
+            margin: 0 15px;
+        }
+
+        .navbar .menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .menu ul li a:hover {
+            color: #ff9800;
+        }
+
+        .navbar .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .navbar .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .navbar .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navbar .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .navbar .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 5px solid #f08a5d;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+            margin-top: 120px; /* Add top margin to account for the fixed navbar */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f08a5d;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d07a50;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsp9FUVMjDBoUb0og42lOx0aPuTwaTrVZ8Ng&s" alt="Quick Fix Hostel">
+            <span>Quick Fix Hostel</span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Profile</a>
+                    <div class="dropdown-content">
+                        <a id="profile-link" href="studentdetails.jsp">Check Status</a>
+                        <a href="lock.html">Logout</a>
+                    </div>
+                </li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Student Complaint Form</h2>
+        <form id="complaint-form" method="post" action="compl.jsp">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" name="studentName" required>
+
+            <label for="registrationNumber">Registration Number</label>
+            <input type="text" id="registrationNumber" name="registrationNumber" required>
+
+            <label for="hostelName">Hostel Name</label>
+            <input type="text" id="hostelName" name="hostelName" required>
+
+            <label for="roomNumber">Room Number</label>
+            <input type="text" id="roomNumber" name="roomNumber" required>
+
+            <label for="description">Description of Complaint</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

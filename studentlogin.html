@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn and SignUp Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+  .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar .menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .menu ul li {
+            margin: 0 15px;
+        }
+
+        .navbar .menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .menu ul li a:hover {
+            color: #ff9800;
+        }
+
+
+
+        .box {
+            width: 380px;
+            background-color: #ffffff;
+            padding: 30px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            border-radius: 15px;
+            border: 5px solid #f08a5d;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            width: 100%;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .header a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #333333;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .header .active {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        #errorMsg {
+            color: red;
+            text-align: center;
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            border: 2px solid #cccccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            font-size: 14px;
+            border-radius: 8px;
+            background-color: transparent;
+            color: #333333;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder,
+        input[type="email"]::placeholder {
+            color: #999999;
+        }
+
+        input[type="text"]:hover,
+        input[type="password"]:hover,
+        input[type="email"]:hover {
+            border: 2px solid #df80ff;
+        }
+
+        input[type="submit"] {
+            border: 2px solid #df80ff;
+            padding: 12px;
+            width: 100%;
+            border-radius: 25px;
+            background-color: #f08a5d;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .login a {
+            color: #df80ff;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .login a:hover {
+            color: #600080;
+        }
+
+        .signup,
+        .login {
+            display: none;
+        }
+
+        .login.active,
+        .signup.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsp9FUVMjDBoUb0og42lOx0aPuTwaTrVZ8Ng&s" alt="Quick Fix Hostel">
+            <span>Quick Fix Hostel</span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="lock.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="header">
+            <a id="login-link" class="active" href="#login">Login</a>
+            <a id="signup-link" href="#signup">Signup</a>
+        </div>
+        <div id="errorMsg"></div>
+        <div class="content">
+            <form class="login active" name="loginForm" onsubmit="return validateLoginForm()" action="Login.jsp" method="POST">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="submit" value="Login">
+                <a href="#">Forgot Password?</a>
+            </form>
+            <form class="signup" name="signupForm" onsubmit="return validateSignupForm()" action="Register.jsp" method="POST">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="text" name="username" id="signup-username" placeholder="Username">
+                <input type="password" name="password" id="signup-password" placeholder="Password">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#login-link').click(function () {
+                $('.signup').removeClass('active');
+                $('.login').addClass('active');
+                $('#signup-link').removeClass('active');
+                $('#login-link').addClass('active');
+            });
+
+            $('#signup-link').click(function () {
+                $('.login').removeClass('active');
+                $('.signup').addClass('active');
+                $('#login-link').removeClass('active');
+                $('#signup-link').addClass('active');
+            });
+        });
+
+        function validateLoginForm() {
+            var name = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (name == "" || password == "") {
+                document.getElementById("errorMsg").innerHTML = "Please fill the required fields";
+                return false;
+            } else if (password.length < 8) {
+                document.getElementById("errorMsg").innerHTML = "Your password must include at least 8 characters";
+                return false;
+            } else {
+                alert("Successfully logged in");
+                return true;
+            }
+        }
+
+        function validateSignupForm() {
+            var email = document.getElementById("email").value;
+            var username = document.getElementById("signup-username").value;
+            var password = document.getElementById("signup-password").value;
+
+            if (email == "" || username == "" || password == "") {
+                document.getElementById("errorMsg").innerHTML = "Please fill the required fields";
+                return false;
+            } else if (password.length < 8) {
+                document.getElementById("errorMsg").innerHTML = "Your password must include at least 8 characters";
+                return false;
+            } else {
+                alert("Successfully signed up");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
